@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/views/home_view.dart';
 
 void main() {
@@ -15,17 +16,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         fontFamily: 'Poppins',
-        textTheme: const TextTheme(),
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.yellow,
-          primary: Colors.yellow,
+        brightness: Brightness.light,
+        colorScheme: const ColorScheme.light(
+          primary: PRIMARY_COLOR,
+          onPrimary: TEXT_COLOR,
         ),
-        appBarTheme: const AppBarTheme(
-            color: Colors.white,
-            shadowColor: Colors.white,
-            elevation: 4,
-            foregroundColor: Colors.black),
-        hoverColor: Colors.yellow.shade200,
       ),
       home: const HomeView(),
     );
