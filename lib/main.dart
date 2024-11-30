@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
-import 'package:kilo_driver_app/views/home_view.dart';
+import 'package:kilo_driver_app/views/splash_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           onPrimary: TEXT_COLOR,
         ),
       ),
-      home: const HomeView(),
+      home: const SplashView(),
     );
   }
 }
