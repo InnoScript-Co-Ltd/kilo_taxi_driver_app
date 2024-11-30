@@ -21,6 +21,18 @@ class MyApp extends StatelessWidget {
           primary: PRIMARY_COLOR,
           onPrimary: TEXT_COLOR,
         ),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: WHITE_COLOR,
+          surfaceTintColor: WHITE_COLOR,
+          elevation: 0.5, // Optional: remove shadow,
+          shadowColor: GREY_COLOR,
+          centerTitle: true, // Optional: center titles by default
+          titleTextStyle: TextStyle(
+            color: BLACK_COLOR,
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
       ),
       home: const SplashView(),
     );
