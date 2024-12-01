@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
+import 'package:kilo_driver_app/views/notification_view.dart';
 import 'package:kilo_driver_app/views/profile_menu_view.dart';
 import 'package:latlong2/latlong.dart';
 
@@ -95,7 +96,10 @@ class HomeView extends StatelessWidget {
             icon: const Icon(Icons
                 .notifications_none), // Trailing icon (e.g., settings icon)
             onPressed: () {
-              // Action for the trailing icon
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => NotificationView()),
+              );
             },
           ),
         ],
