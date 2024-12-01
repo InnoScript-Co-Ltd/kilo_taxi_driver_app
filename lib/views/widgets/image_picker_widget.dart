@@ -18,14 +18,17 @@ class ImagePickerWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(4.0), // Rounded corners
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               title,
               style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 24.0),
-              child: Icon(Icons.camera_alt_outlined),
+            const Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 24.0),
+                child: Icon(Icons.camera_alt_outlined),
+              ),
             )
           ],
         ),

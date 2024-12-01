@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/views/registration_pending_view.dart';
+import 'package:kilo_driver_app/views/registration_review_view.dart';
 import 'package:kilo_driver_app/views/widgets/dropdown_menu_widget.dart';
 import 'package:kilo_driver_app/views/widgets/image_picker_widget.dart';
 import 'package:kilo_driver_app/views/widgets/text_field_widget.dart';
@@ -75,7 +76,8 @@ class _RegisterViewState extends State<RegisterView> {
             } else {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const RegistrationPendingView()),
+                MaterialPageRoute(
+                    builder: (context) => const RegistrationReviewView()),
               );
             }
           },
@@ -162,7 +164,7 @@ class AgreementInformation extends StatefulWidget {
 }
 
 class _AgreementInformationState extends State<AgreementInformation> {
-  bool agree = true;
+  bool agree = false;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -179,7 +181,7 @@ class _AgreementInformationState extends State<AgreementInformation> {
             height: 16,
           ),
           const Text(
-            "(၁) ခရီးသည်နှင့် ဝန်ဆောင်မပေးသော အချိန်တွင် ကား လေအေးပေးစက်အား အသုံးပြုပေးနိုင်ပါသလား ?\n\n\n(၂) မိမိကားကို သန့်ရှင်းသပ်ရပ်စွာ ထိန်းသိမ်းပေးနိုင် ပါသလား ?\n\n\n(၃) ခရီးသည်နှင့် စိတ်ရှည်သည်းခံ ယဥ်ကျေးပြူငှာစွာဖြင့် အကောင်းမွန်ဆုံးဝန်ဆောင်မှုပေးနိုင်ပါသလား?\n\n\n(၄) ယာဥ်စည်းကမ်း/လမ်းစည်းကမ်းများကို သိရှိလိုက်နာ ပြီး ဥပဒေနှင့်ညီညွတ်စွာ မောင်းနှင်နိုင်ပါသလား?",
+            "(၁) ခရီးသည်နှင့် ဝန်ဆောင်မှုပေးသော အချိန်တွင် ကား လေအေးပေးစက်အား အသုံးပြုပေးနိုင်ပါသလား ?\n\n\n(၂) မိမိကားကို သန့်ရှင်းသပ်ရပ်စွာ ထိန်းသိမ်းပေးနိုင် ပါသလား ?\n\n\n(၃) ခရီးသည်နှင့် စိတ်ရှည်သည်းခံ ယဥ်ကျေးပြူငှာစွာဖြင့် အကောင်းမွန်ဆုံးဝန်ဆောင်မှုပေးနိုင်ပါသလား?\n\n\n(၄) ယာဥ်စည်းကမ်း/လမ်းစည်းကမ်းများကို သိရှိလိုက်နာ ပြီး ဥပဒေနှင့်ညီညွတ်စွာ မောင်းနှင်နိုင်ပါသလား?",
             style: TextStyle(
                 fontSize: 15, fontWeight: FontWeight.w400, color: TEXT_COLOR),
           ),
@@ -439,6 +441,40 @@ class _DriverInformationState extends State<DriverInformation> {
             "Fill Driver Information",
             style: TextStyle(
                 fontSize: 16, fontWeight: FontWeight.w500, color: BLACK_COLOR),
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          Center(
+            child: Stack(
+              children: [
+                Container(
+                  width: 122.0,
+                  height: 122.0,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade200,
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: INDIGO_COLOR, // Stroke color
+                      width: 5, // Stroke width
+                    ),
+                  ),
+                ),
+                Positioned(
+                  bottom: 0,
+                  right: 0,
+                  child: Container(
+                    decoration: const BoxDecoration(
+                        shape: BoxShape.circle, color: Colors.white),
+                    child: const Icon(
+                      Icons.check_circle_rounded, // Success icon
+                      color: INDIGO_COLOR,
+                      size: 40.0, // Icon size
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
           const SizedBox(
             height: 16,

@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
+import 'package:kilo_driver_app/views/home_view.dart';
 import 'package:kilo_driver_app/views/register_view.dart';
 import 'package:kilo_driver_app/views/widgets/text_field_widget.dart';
 
@@ -57,12 +58,19 @@ class _LoginViewState extends State<LoginView> {
                   const SizedBox(
                     height: 8,
                   ),
-                  const TextFieldWidget(labelText: 'Password', obscureText: true),
+                  const TextFieldWidget(
+                      labelText: 'Password', obscureText: true),
                   const SizedBox(
                     height: 24,
                   ),
                   MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomeView()),
+                      );
+                    },
                     color: PRIMARY_COLOR,
                     height: Dimens.BUTTON_COMMON_HEIGHT,
                     minWidth: double.infinity,

@@ -7,6 +7,7 @@ const WHITE_COLOR = Color(0xFFFFFFFF);
 const GREY_COLOR = Color(0xFFDDDDDD);
 const INFO_COLOR = Color(0xFF1D77FF);
 const SUCCESS_COLOR = Color(0xFF00CD15);
+const INDIGO_COLOR = Color(0xFF5470F2);
 
 const MaterialColor PRIMARY_COLOR_MATERIAL = MaterialColor(
   0xFFFAD705,
