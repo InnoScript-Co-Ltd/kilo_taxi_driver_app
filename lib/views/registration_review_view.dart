@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
-import 'package:kilo_driver_app/views/home_view.dart';
 import 'package:kilo_driver_app/views/registration_pending_view.dart';
 import 'package:kilo_driver_app/views/widgets/preview_content_widget.dart';
 import 'package:kilo_driver_app/views/widgets/preview_image_widget.dart';
