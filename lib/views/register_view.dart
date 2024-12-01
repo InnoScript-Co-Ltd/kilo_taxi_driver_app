@@ -417,18 +417,6 @@ class DriverInformation extends StatefulWidget {
 class _DriverInformationState extends State<DriverInformation> {
   String? _carTypeOption = "own";
 
-  // Initial selected value
-  String? idNumber;
-
-  // List of items
-  final List<String> idNumberOptions = [
-    'Apple',
-    'Banana',
-    'Cherry',
-    'Date',
-    'Grapes'
-  ];
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
