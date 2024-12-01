@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
-import 'package:kilo_driver_app/views/home_view.dart';
+import 'package:kilo_driver_app/views/login_view.dart';
 
 class LanguageView extends StatefulWidget {
   const LanguageView({super.key});
@@ -109,7 +109,7 @@ class _LanguageViewState extends State<LanguageView> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const HomeView()),
+                              builder: (context) => const LoginView()),
                         );
                       },
                       color: PRIMARY_COLOR,
