@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
+import 'package:kilo_driver_app/views/change_password_view.dart';
+import 'package:kilo_driver_app/views/language_view.dart';
 import 'package:kilo_driver_app/views/profile_detail_view.dart';
 import 'package:kilo_driver_app/views/widgets/custom_list_tile_widget.dart';
 
@@ -287,7 +289,13 @@ class ProfileMenuView extends StatelessWidget {
               ),
               CustomListTileWidget(
                 title: "Change Password",
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ChangePasswordView()),
+                  );
+                },
               ),
               const SizedBox(
                 height: 32,
@@ -304,7 +312,13 @@ class ProfileMenuView extends StatelessWidget {
               ),
               CustomListTileWidget(
                 title: "Language",
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LanguageView()),
+                  );
+                },
               ),
               const SizedBox(
                 height: 8,

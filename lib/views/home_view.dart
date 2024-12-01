@@ -106,14 +106,14 @@ class HomeView extends StatelessWidget {
             FlutterMap(
                 options: const MapOptions(
                   initialCenter: LatLng(16.8395368, 95.8518913),
-                  initialZoom: 12.0,
+                  initialZoom: 15,
                 ),
                 children: [
                   TileLayer(
-                      urlTemplate:
-                          "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                      userAgentPackageName: 'com.example.app',
-                      subdomains: const ['a', 'b', 'c']),
+                    urlTemplate:
+                        "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                    userAgentPackageName: 'com.example.app',
+                  ),
                   MarkerLayer(markers: [
                     Marker(
                       point: const LatLng(16.8395368, 95.8518913),
