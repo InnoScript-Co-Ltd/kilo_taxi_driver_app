@@ -17,7 +17,13 @@ class ProfileMenuView extends StatelessWidget {
             icon: const Icon(
                 Icons.qr_code), // Trailing icon (e.g., settings icon)
             onPressed: () {
-              // Action for the trailing icon
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const ProfileDetailView(
+                          initialIndex: 3,
+                        )),
+              );
             },
           ),
         ],
@@ -35,7 +41,9 @@ class ProfileMenuView extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const ProfileDetailView()),
+                        builder: (context) => const ProfileDetailView(
+                              initialIndex: 0,
+                            )),
                   );
                 },
                 child: Row(
