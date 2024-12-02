@@ -30,7 +30,6 @@ class RouteClass {
   static const String memberManange = '/memberManange';
   static const String memberDetail = '/memberDetail';
   static const String topUpSummary = '/topUpSummary';
-  
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
