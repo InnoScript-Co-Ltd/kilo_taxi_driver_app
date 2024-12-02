@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kilo_driver_app/routes/routes.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
 import 'package:kilo_driver_app/views/change_password_view.dart';
@@ -227,7 +228,9 @@ class ProfileMenuView extends StatelessWidget {
               ),
               CustomListTileWidget(
                 title: "ငွေစာရင်း",
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, RouteClass.account);
+                },
               ),
               const SizedBox(
                 height: 32,
@@ -244,35 +247,45 @@ class ProfileMenuView extends StatelessWidget {
               ),
               CustomListTileWidget(
                 title: "ယနေ့ခရီးစဥ်ဈေးနှုန်း",
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, RouteClass.todayTrip);
+                },
               ),
               const SizedBox(
                 height: 8,
               ),
               CustomListTileWidget(
                 title: "ခရီးစဥ်မှတ်တမ်း",
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, RouteClass.tripHistory);
+                },
               ),
               const SizedBox(
                 height: 8,
               ),
               CustomListTileWidget(
                 title: "Wallet မှတ်တမ်း",
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, RouteClass.walletHistory);
+                },
               ),
               const SizedBox(
                 height: 8,
               ),
               CustomListTileWidget(
                 title: "အဖွဲ့ဝင်များစီမံရန်",
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, RouteClass.memberManange);
+                },
               ),
               const SizedBox(
                 height: 8,
               ),
               CustomListTileWidget(
                 title: "Top-up Summary",
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, RouteClass.topUpSummary);
+                },
               ),
               const SizedBox(
                 height: 32,
