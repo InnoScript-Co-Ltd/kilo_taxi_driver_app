@@ -35,9 +35,9 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      // home: const SplashView(),
+      home: const SplashView(),
       onGenerateRoute: RouteClass.generateRoute,
-      initialRoute: RouteClass.homepage,
+      // initialRoute: RouteClass.homepage,
     );
   }
 }
