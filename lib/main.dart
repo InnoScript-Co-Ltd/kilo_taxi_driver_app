@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kilo_driver_app/routes/routes.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
+import 'package:kilo_driver_app/views/splash_view.dart';
 
 void main() {
   runApp(const MyApp());
