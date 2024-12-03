@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:kilo_driver_app/routes/routes.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
 import 'package:kilo_driver_app/views/notification_view.dart';
@@ -148,6 +149,35 @@ class HomeView extends StatelessWidget {
                             fontSize: 12,
                             fontWeight: FontWeight.w500,
                             color: Colors.white),
+                      ),
+                    ),
+                    MaterialButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, RouteClass.sos);
+                      },
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(15), // Rounded corners
+                      ),
+                      elevation: 2,
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            'assets/images/emergency.png',
+                            width: 20,
+                          ),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          const Text(
+                            'SOS',
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.red),
+                          ),
+                        ],
                       ),
                     ),
                     MaterialButton(
