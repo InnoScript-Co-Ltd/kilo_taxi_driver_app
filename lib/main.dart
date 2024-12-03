@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           backgroundColor: WHITE_COLOR,
           surfaceTintColor: WHITE_COLOR,
-          elevation: 0.5, // Optional: remove shadow,
+          elevation: 0, // Optional: remove shadow,
           shadowColor: GREY_COLOR,
           centerTitle: true, // Optional: center titles by default
           titleTextStyle: TextStyle(
