@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kilo_driver_app/routes/routes.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
-import 'package:kilo_driver_app/views/registration_review/registration_review_view.dart';
 import 'package:kilo_driver_app/views/widgets/dropdown_menu_widget.dart';
 import 'package:kilo_driver_app/views/widgets/image_picker_widget.dart';
 import 'package:kilo_driver_app/views/widgets/text_field_widget.dart';

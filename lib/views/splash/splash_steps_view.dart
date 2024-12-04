@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:kilo_driver_app/routes/routes.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
-import 'package:kilo_driver_app/views/language/language_view.dart';
 
 class SplashStepsView extends StatefulWidget {
   const SplashStepsView({super.key});

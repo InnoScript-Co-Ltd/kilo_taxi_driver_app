@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:kilo_driver_app/routes/routes.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
-import 'package:kilo_driver_app/views/home/home_view.dart';
-import 'package:kilo_driver_app/views/register/register_view.dart';
 import 'package:kilo_driver_app/views/widgets/text_field_widget.dart';
 
 class LoginView extends StatefulWidget {

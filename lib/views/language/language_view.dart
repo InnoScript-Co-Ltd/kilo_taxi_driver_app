@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:kilo_driver_app/routes/routes.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
-import 'package:kilo_driver_app/views/login/login_view.dart';
 
 class LanguageView extends StatefulWidget {
   const LanguageView({super.key});
