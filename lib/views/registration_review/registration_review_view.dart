@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:kilo_driver_app/routes/routes.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
-import 'package:kilo_driver_app/views/registration_pending_view.dart';
+import 'package:kilo_driver_app/views/registration_pending/registration_pending_view.dart';
 import 'package:kilo_driver_app/views/widgets/preview_content_widget.dart';
 import 'package:kilo_driver_app/views/widgets/preview_image_widget.dart';
 
@@ -226,11 +227,8 @@ class _RegistrationReviewViewState extends State<RegistrationReviewView> {
                 ),
                 MaterialButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const RegistrationPendingView()),
-                    );
+                    Navigator.pushNamed(
+                        context, RouteClass.registrationPending);
                   },
                   color: PRIMARY_COLOR,
                   height: Dimens.BUTTON_COMMON_HEIGHT,

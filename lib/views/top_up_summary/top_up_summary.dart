@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:kilo_driver_app/views/top%20up%20summary/top_up_summary_cubit.dart';
+import 'package:kilo_driver_app/views/top_up_summary/top_up_summary_cubit.dart';
 import 'package:kilo_driver_app/views/widgets/appbar_widgets.dart';
 
 class TopUpSummary extends StatelessWidget {

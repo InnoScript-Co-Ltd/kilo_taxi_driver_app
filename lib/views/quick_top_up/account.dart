@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kilo_driver_app/views/quick%20top%20up/account_cubit.dart';
+import 'package:kilo_driver_app/views/quick_top_up/account_cubit.dart';
 import 'package:intl/intl.dart';
 import 'package:kilo_driver_app/views/widgets/appbar_widgets.dart';
 

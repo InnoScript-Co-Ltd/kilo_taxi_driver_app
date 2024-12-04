@@ -1,9 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:kilo_driver_app/routes/routes.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
-import 'package:kilo_driver_app/views/home_view.dart';
-import 'package:kilo_driver_app/views/register_view.dart';
+import 'package:kilo_driver_app/views/home/home_view.dart';
+import 'package:kilo_driver_app/views/register/register_view.dart';
 import 'package:kilo_driver_app/views/widgets/text_field_widget.dart';
 
 class LoginView extends StatefulWidget {
@@ -65,11 +66,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   MaterialButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const HomeView()),
-                      );
+                      Navigator.pushNamed(context, RouteClass.home);
                     },
                     color: PRIMARY_COLOR,
                     height: Dimens.BUTTON_COMMON_HEIGHT,
@@ -106,12 +103,8 @@ class _LoginViewState extends State<LoginView> {
                                 decoration: TextDecoration.underline),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const RegisterView()),
-                                );
+                                Navigator.pushNamed(
+                                    context, RouteClass.register);
                               },
                           ),
                         ],

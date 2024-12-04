@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kilo_driver_app/routes/routes.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
-import 'package:kilo_driver_app/views/splash_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           backgroundColor: WHITE_COLOR,
           surfaceTintColor: WHITE_COLOR,
-          elevation: 0, // Optional: remove shadow,
+          elevation: 0.5, // Optional: remove shadow,
           shadowColor: GREY_COLOR,
           centerTitle: true, // Optional: center titles by default
           titleTextStyle: TextStyle(
@@ -36,9 +35,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const SplashView(),
       onGenerateRoute: RouteClass.generateRoute,
-      // initialRoute: RouteClass.homepage,
+      initialRoute: RouteClass.splash,
     );
   }
 }

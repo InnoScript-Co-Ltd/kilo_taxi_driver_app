@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:kilo_driver_app/routes/routes.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
-import 'package:kilo_driver_app/views/splash_steps_view.dart';
+import 'package:kilo_driver_app/views/splash/splash_steps_view.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -17,9 +18,9 @@ class _SplashViewState extends State<SplashView> {
 
     // Delay for 3 seconds and navigate to the next screen
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
+      Navigator.pushReplacementNamed(
         context,
-        MaterialPageRoute(builder: (context) => const SplashStepsView()),
+        RouteClass.splashSteps,
       );
     });
   }
