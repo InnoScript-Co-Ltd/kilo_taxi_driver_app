@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:kilo_driver_app/routes/routes.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
-import 'package:kilo_driver_app/views/language_view.dart';
+import 'package:kilo_driver_app/views/language/language_view.dart';
 
 class SplashStepsView extends StatefulWidget {
   const SplashStepsView({super.key});
@@ -49,10 +50,7 @@ class _SplashStepsViewState extends State<SplashStepsView> {
         curve: Curves.ease,
       );
     } else if (_currentPage == _onboardingData.length - 1) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const LanguageView()),
-      );
+      Navigator.pushNamed(context, RouteClass.chooseLanguage);
     } else {
       _onSkip();
     }

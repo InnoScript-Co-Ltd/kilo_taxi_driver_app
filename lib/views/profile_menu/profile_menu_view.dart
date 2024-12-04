@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:kilo_driver_app/routes/routes.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
-import 'package:kilo_driver_app/views/change_password_view.dart';
-import 'package:kilo_driver_app/views/language_view.dart';
-import 'package:kilo_driver_app/views/profile_detail_view.dart';
+import 'package:kilo_driver_app/views/change_password/change_password_view.dart';
+import 'package:kilo_driver_app/views/language/language_view.dart';
+import 'package:kilo_driver_app/views/profile_detail/profile_detail_view.dart';
 import 'package:kilo_driver_app/views/widgets/custom_list_tile_widget.dart';
 
 class ProfileMenuView extends StatelessWidget {
@@ -20,13 +20,7 @@ class ProfileMenuView extends StatelessWidget {
             icon: const Icon(
                 Icons.qr_code), // Trailing icon (e.g., settings icon)
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const ProfileDetailView(
-                          initialIndex: 3,
-                        )),
-              );
+              Navigator.pushNamed(context, RouteClass.profile, arguments: 3);
             },
           ),
         ],
@@ -41,13 +35,7 @@ class ProfileMenuView extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ProfileDetailView(
-                              initialIndex: 0,
-                            )),
-                  );
+                  Navigator.pushNamed(context, RouteClass.profile, arguments: 0);
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -275,7 +263,7 @@ class ProfileMenuView extends StatelessWidget {
               CustomListTileWidget(
                 title: "အဖွဲ့ဝင်များစီမံရန်",
                 onTap: () {
-                  Navigator.pushNamed(context, RouteClass.memberManange);
+                  Navigator.pushNamed(context, RouteClass.memberManage);
                 },
               ),
               const SizedBox(
@@ -303,11 +291,7 @@ class ProfileMenuView extends StatelessWidget {
               CustomListTileWidget(
                 title: "Change Password",
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ChangePasswordView()),
-                  );
+                  Navigator.pushNamed(context, RouteClass.changePassword);
                 },
               ),
               const SizedBox(
@@ -326,11 +310,7 @@ class ProfileMenuView extends StatelessWidget {
               CustomListTileWidget(
                 title: "Language",
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const LanguageView()),
-                  );
+                  Navigator.pushNamed(context, RouteClass.chooseLanguage);
                 },
               ),
               const SizedBox(

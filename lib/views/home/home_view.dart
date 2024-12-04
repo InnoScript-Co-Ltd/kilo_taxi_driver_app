@@ -3,8 +3,8 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:kilo_driver_app/routes/routes.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
-import 'package:kilo_driver_app/views/notification_view.dart';
-import 'package:kilo_driver_app/views/profile_menu_view.dart';
+import 'package:kilo_driver_app/views/notification/notification_view.dart';
+import 'package:kilo_driver_app/views/profile_menu/profile_menu_view.dart';
 import 'package:latlong2/latlong.dart';
 
 class HomeView extends StatelessWidget {
@@ -22,11 +22,7 @@ class HomeView extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ProfileMenuView()),
-                  );
+                  Navigator.pushNamed(context, RouteClass.profileMenu);
                 },
                 child: Container(
                   width: 48.0,
@@ -97,10 +93,7 @@ class HomeView extends StatelessWidget {
             icon: const Icon(Icons
                 .notifications_none), // Trailing icon (e.g., settings icon)
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => NotificationView()),
-              );
+              Navigator.pushNamed(context, RouteClass.notification);
             },
           ),
         ],

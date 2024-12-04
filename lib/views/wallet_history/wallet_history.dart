@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kilo_driver_app/views/widgets/appbar_widgets.dart';
 
-class WallteHistory extends StatelessWidget {
-  const WallteHistory({super.key});
+class WalletHistory extends StatelessWidget {
+  const WalletHistory({super.key});
 
   @override
   Widget build(BuildContext context) {

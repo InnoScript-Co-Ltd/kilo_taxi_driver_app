@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:kilo_driver_app/routes/routes.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
-import 'package:kilo_driver_app/views/home_view.dart';
+import 'package:kilo_driver_app/views/home/home_view.dart';
 
 class RegistrationPendingView extends StatelessWidget {
   const RegistrationPendingView({super.key});
@@ -82,10 +83,7 @@ class RegistrationPendingView extends StatelessWidget {
                   )),
               MaterialButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const HomeView()),
-                  );
+                  Navigator.pushNamed(context, RouteClass.home);
                 },
                 color: PRIMARY_COLOR,
                 height: Dimens.BUTTON_COMMON_HEIGHT,

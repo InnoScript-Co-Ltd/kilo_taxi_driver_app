@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:kilo_driver_app/routes/routes.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
-import 'package:kilo_driver_app/views/login_view.dart';
+import 'package:kilo_driver_app/views/login/login_view.dart';
 
 class LanguageView extends StatefulWidget {
   const LanguageView({super.key});
@@ -106,11 +107,7 @@ class _LanguageViewState extends State<LanguageView> {
                   ),
                   MaterialButton(
                       onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const LoginView()),
-                        );
+                        Navigator.pushNamed(context, RouteClass.login);
                       },
                       color: PRIMARY_COLOR,
                       height: Dimens.BUTTON_COMMON_HEIGHT,
