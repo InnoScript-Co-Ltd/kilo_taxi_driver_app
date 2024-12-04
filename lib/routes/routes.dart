@@ -6,6 +6,7 @@ import 'package:kilo_driver_app/views/note_list_view.dart';
 import 'package:kilo_driver_app/views/quick%20top%20up/account.dart';
 import 'package:kilo_driver_app/views/quick%20top%20up/quick_top_up.dart';
 import 'package:kilo_driver_app/views/quick%20top%20up/success_top_up.dart';
+import 'package:kilo_driver_app/views/sos/sos.dart';
 import 'package:kilo_driver_app/views/top%20up%20summary/top_up_summary.dart';
 import 'package:kilo_driver_app/views/trip/today_trip.dart';
 import 'package:kilo_driver_app/views/trip/trip_card_detail.dart';
@@ -24,12 +25,11 @@ class RouteClass {
   static const String tripHistory = '/tripHistory';
   static const String tripCardDetail = '/tripCardDetail';
   static const String tripCardInvoice = '/tripCardInvoice';
-
-  ///
   static const String walletHistory = '/walletHistory';
   static const String memberManange = '/memberManange';
   static const String memberDetail = '/memberDetail';
   static const String topUpSummary = '/topUpSummary';
+  static const String sos = '/sos';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -62,6 +62,8 @@ class RouteClass {
         return MaterialPageRoute(builder: (context) => const MemberDetails());
       case topUpSummary:
         return MaterialPageRoute(builder: (context) => const TopUpSummary());
+      case sos:
+        return MaterialPageRoute(builder: (context) => const SOSpage());
       default:
         return MaterialPageRoute(
           builder: (context) => Scaffold(
