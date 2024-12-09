@@ -7,6 +7,10 @@ import 'package:kilo_driver_app/views/member/member_details.dart';
 import 'package:kilo_driver_app/views/member/member_manage.dart';
 import 'package:kilo_driver_app/views/note_list_view.dart';
 import 'package:kilo_driver_app/views/notification/notification_view.dart';
+import 'package:kilo_driver_app/views/order/auto_order_accept_view.dart';
+import 'package:kilo_driver_app/views/order/cancel_reason_view.dart';
+import 'package:kilo_driver_app/views/order/cancel_success_view.dart';
+import 'package:kilo_driver_app/views/order/extra_demands_view.dart';
 import 'package:kilo_driver_app/views/profile_detail/profile_detail_view.dart';
 import 'package:kilo_driver_app/views/profile_menu/profile_menu_view.dart';
 import 'package:kilo_driver_app/views/quick_top_up/account.dart';
@@ -54,8 +58,12 @@ class RouteClass {
   static const String topUpSummary = '/top-up-summary';
   static const String sos = '/sos';
 
+  static const String autoOrderAccept = "/auto-order-accept";
+  static const String extraDemands = "/extra-demands";
+  static const String cancelReason = "/cancel-reason";
+  static const String cancelSuccess = "/cancel-success";
+
   static Route<dynamic> generateRoute(RouteSettings settings) {
-    
     switch (settings.name) {
       case home:
         return _buildRoute(const HomeView());
@@ -80,7 +88,8 @@ class RouteClass {
       case profileMenu:
         return _buildRoute(const ProfileMenuView());
       case profile:
-        return _buildRoute(ProfileDetailView(initialIndex: settings.arguments as int? ?? 0));
+        return _buildRoute(
+            ProfileDetailView(initialIndex: settings.arguments as int? ?? 0));
       case noteListView:
         return _buildRoute(NoteListView());
       case quickTopUp:
@@ -110,6 +119,14 @@ class RouteClass {
         return _buildRoute(const TopUpSummary());
       case sos:
         return _buildRoute(const SOSpage());
+      case autoOrderAccept:
+        return _buildRoute(const AutoOrderAccept());
+      case extraDemands:
+        return _buildRoute(ExtraDemandsView());
+      case cancelReason:
+        return _buildRoute(const CancelReasonView());
+      case cancelSuccess:
+        return _buildRoute(const CancelSuccessView());
       default:
         return MaterialPageRoute(
           builder: (context) => Scaffold(
