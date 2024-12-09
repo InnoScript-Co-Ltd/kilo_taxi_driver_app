@@ -94,6 +94,13 @@ class HomeView extends StatelessWidget {
               Navigator.pushNamed(context, RouteClass.notification);
             },
           ),
+          IconButton(
+            icon:
+                const Icon(Icons.check), // Trailing icon (e.g., settings icon)
+            onPressed: () {
+              Navigator.pushNamed(context, RouteClass.autoOrderAccept);
+            },
+          ),
         ],
       ),
       body: SafeArea(
