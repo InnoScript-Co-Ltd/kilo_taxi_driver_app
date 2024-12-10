@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
-import 'package:kilo_driver_app/views/widgets/appbar_widgets.dart';
 
 class MemberDetails extends StatefulWidget {
   const MemberDetails({super.key});
@@ -24,7 +23,9 @@ class _MemberDetailsState extends State<MemberDetails> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        appBar: AppbarWidgets.appBarWidget(context, "အဖွဲ့ဝင် အသေးစိတ်"),
+        appBar: AppBar(
+          title: const Text('အဖွဲ့ဝင် အသေးစိတ်'),
+        ),
         body: Column(
           children: [
             // Header Section

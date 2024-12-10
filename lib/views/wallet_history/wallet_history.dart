@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:kilo_driver_app/views/widgets/appbar_widgets.dart';
 
 class WalletHistory extends StatelessWidget {
   const WalletHistory({super.key});
@@ -7,7 +6,9 @@ class WalletHistory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppbarWidgets.appBarWidget(context, "Wallet မှတ်တမ်း"),
+      appBar: AppBar(
+        title: const Text('Wallet မှတ်တမ်း'),
+      ),
       body: Column(
         children: [
           Padding(

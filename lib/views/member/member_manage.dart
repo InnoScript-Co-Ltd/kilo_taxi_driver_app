@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kilo_driver_app/routes/routes.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
-import 'package:kilo_driver_app/views/widgets/appbar_widgets.dart';
 
 class MemberManage extends StatelessWidget {
   const MemberManage({super.key});
@@ -9,7 +8,9 @@ class MemberManage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppbarWidgets.appBarWidget(context, "အဖွဲ့ဝင်များစီမံရန်"),
+      appBar: AppBar(
+        title: const Text('အဖွဲ့ဝင်များစီမံရန်'),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(

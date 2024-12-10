@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:kilo_driver_app/views/top_up_summary/top_up_summary_cubit.dart';
-import 'package:kilo_driver_app/views/widgets/appbar_widgets.dart';
 
 class TopUpSummary extends StatelessWidget {
   const TopUpSummary({super.key});
@@ -12,7 +11,9 @@ class TopUpSummary extends StatelessWidget {
     return BlocProvider(
       create: (context) => TopUpSummaryCubit()..loadTransactions(),
       child: Scaffold(
-        appBar: AppbarWidgets.appBarWidget(context, "Wallet Top-up Summary"),
+        appBar: AppBar(
+          title: const Text('Wallet Top-up Summary'),
+        ),
         body: Column(
           children: [
             Padding(

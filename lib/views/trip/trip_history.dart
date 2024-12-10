@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kilo_driver_app/routes/routes.dart';
-import 'package:kilo_driver_app/views/widgets/appbar_widgets.dart';
+
 import 'trip_cubit.dart'; // Import the TripCubit
 
 class TripHistory extends StatefulWidget {
@@ -19,7 +19,9 @@ class _TripHistoryState extends State<TripHistory> {
     return BlocProvider(
       create: (_) => TripCubit(),
       child: Scaffold(
-        appBar: AppbarWidgets.appBarWidget(context, "ခရီးစဉ်မှတ်တမ်း"),
+        appBar: AppBar(
+          title: const Text('ခရီးစဉ်မှတ်တမ်း'),
+        ),
         body: Column(
           children: [
             // Date and Filter Section

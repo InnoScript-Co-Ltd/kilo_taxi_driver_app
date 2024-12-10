@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kilo_driver_app/views/quick_top_up/account_cubit.dart';
 import 'package:intl/intl.dart';
-import 'package:kilo_driver_app/views/widgets/appbar_widgets.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({super.key});
@@ -19,7 +18,9 @@ class _AccountPageState extends State<AccountPage> {
     return BlocProvider(
       create: (context) => TransactionCubit()..loadTransactions(),
       child: Scaffold(
-        appBar: AppbarWidgets.appBarWidget(context, "ငွေစာရင်း"),
+        appBar: AppBar(
+          title: const Text('ငွေစာရင်း'),
+        ),
         body: Column(
           children: [
             // Header

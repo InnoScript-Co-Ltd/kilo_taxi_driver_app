@@ -5,9 +5,15 @@ import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
 import 'package:latlong2/latlong.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  bool autoOn = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,13 +100,42 @@ class HomeView extends StatelessWidget {
               Navigator.pushNamed(context, RouteClass.notification);
             },
           ),
-          IconButton(
-            icon:
-                const Icon(Icons.check), // Trailing icon (e.g., settings icon)
-            onPressed: () {
-              Navigator.pushNamed(context, RouteClass.autoOrderAccept);
+          PopupMenuButton<String>(
+            onSelected: (value) {
+              if (value == 'OrderList') {
+                Navigator.pushNamed(context, RouteClass.orderList);
+              }
+              if (value == 'OrderAccept') {
+                Navigator.pushNamed(context, RouteClass.autoOrderAccept);
+              }
+            },
+            itemBuilder: (BuildContext context) {
+              return [
+                const PopupMenuItem<String>(
+                  value: "OrderList",
+                  child: Text("Order List"),
+                ),
+                const PopupMenuItem<String>(
+                  value: "OrderAccept",
+                  child: Text("Order Accept"),
+                ),
+              ];
             },
           ),
+          // IconButton(
+          //   icon:
+          //       const Icon(Icons.check), // Trailing icon (e.g., settings icon)
+          //   onPressed: () {
+          //     Navigator.pushNamed(context, RouteClass.autoOrderAccept);
+          //   },
+          // ),
+          // IconButton(
+          //   icon:
+          //       const Icon(Icons.check), // Trailing icon (e.g., settings icon)
+          //   onPressed: () {
+          //     Navigator.pushNamed(context, RouteClass.autoOrderAccept);
+          //   },
+          // ),
         ],
       ),
       body: SafeArea(
@@ -134,16 +169,20 @@ class HomeView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     MaterialButton(
-                      onPressed: () {},
-                      color: const Color(0xFF0E9347),
+                      onPressed: () {
+                        setState(() {
+                          autoOn = !autoOn;
+                        });
+                      },
+                      color: autoOn ? GREEN_COLOR : DANGER_COLOR,
                       shape: RoundedRectangleBorder(
                         borderRadius:
                             BorderRadius.circular(8), // Rounded corners
                       ),
                       elevation: 0,
-                      child: const Text(
-                        'Auto On',
-                        style: TextStyle(
+                      child: Text(
+                        autoOn ? 'Auto On' : 'Auto Off',
+                        style: const TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w500,
                             color: Colors.white),
@@ -151,35 +190,8 @@ class HomeView extends StatelessWidget {
                     ),
                     MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, RouteClass.sos);
+                        Navigator.pushNamed(context, RouteClass.acceptOrderDetail);
                       },
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.circular(15), // Rounded corners
-                      ),
-                      elevation: 2,
-                      child: Row(
-                        children: [
-                          Image.asset(
-                            'assets/images/emergency.png',
-                            width: 20,
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          const Text(
-                            'SOS',
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.red),
-                          ),
-                        ],
-                      ),
-                    ),
-                    MaterialButton(
-                      onPressed: () {},
                       color: const Color(0xFF0909C4),
                       shape: RoundedRectangleBorder(
                         borderRadius:

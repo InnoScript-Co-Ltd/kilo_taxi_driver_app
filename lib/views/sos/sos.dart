@@ -156,6 +156,7 @@ class _SOSpageState extends State<SOSpage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.0,
         title: const Text('SOS'),
       ),
       body: Column(
