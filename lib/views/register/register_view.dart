@@ -73,7 +73,6 @@ class _RegisterViewState extends State<RegisterView> {
                 _currentStep += 1;
               });
             } else {
-              
               Navigator.pushNamed(context, RouteClass.registrationReview);
             }
           },

@@ -22,6 +22,11 @@ class MyApp extends StatelessWidget {
           primary: PRIMARY_COLOR,
           onPrimary: TEXT_COLOR,
         ),
+        actionIconTheme: ActionIconThemeData(
+          backButtonIconBuilder: (context) => const Icon(
+            Icons.arrow_back_ios, // Replace with your custom icon
+          ),
+        ),
         appBarTheme: const AppBarTheme(
           backgroundColor: WHITE_COLOR,
           surfaceTintColor: WHITE_COLOR,

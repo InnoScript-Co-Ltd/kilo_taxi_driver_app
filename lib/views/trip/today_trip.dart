@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kilo_driver_app/views/widgets/appbar_widgets.dart';
+import 'package:kilo_driver_app/theme/resource/colors.dart';
+
 
 class TodayTrip extends StatefulWidget {
   const TodayTrip({super.key});
@@ -21,37 +22,28 @@ class _TodayTripState extends State<TodayTrip>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppbarWidgets.appBarWidget(context, "ယနေ့ခရီးစဉ်ဈေးနှုန်း"),
-      body: Column(
-        children: [
-          // Custom TabBar
-          Container(
-            color: Colors.white,
-            child: TabBar(
-              controller: _tabController,
-              labelColor: Colors.black,
-              unselectedLabelColor: Colors.grey,
-              indicatorColor: Colors.blue,
-              indicatorWeight: 3.0,
-              tabs: const [
-                Tab(text: "Config Fee"),
-                Tab(text: "Extra Demand Fee"),
-              ],
-            ),
+        appBar: AppBar(
+          title: const Text('ယနေ့ခရီးစဉ်ဈေးနှုန်း'),
+          bottom: TabBar(
+            controller: _tabController,
+            dividerHeight: 0.1,
+            dividerColor: Colors.grey.shade200,
+            indicatorColor: INDIGO_COLOR, // Selected tab underline color
+            indicatorWeight: 4.0, // Thickness of the underline
+            labelColor: BLACK_COLOR,
+            tabs: const [
+              Tab(text: "Config Fee"),
+              Tab(text: "Extra Demand Fee"),
+            ],
           ),
-          // TabBarView
-          Expanded(
-            child: TabBarView(
-              controller: _tabController,
-              children: [
-                _buildConfigFeeList(),
-                _buildExtraDemandFeeList(),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
+        ),
+        body: TabBarView(
+          controller: _tabController,
+          children: [
+            _buildConfigFeeList(),
+            _buildExtraDemandFeeList(),
+          ],
+        ));
   }
 
   Widget _buildConfigFeeList() {
