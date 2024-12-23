@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 class Dimens {
   /// Generic Dimensions
   static const MARGIN_XSMALL = 2.0;

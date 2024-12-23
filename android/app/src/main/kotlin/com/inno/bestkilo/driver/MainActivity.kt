@@ -1,4 +1,4 @@
-package com.kilotaxi.driver.kilo_driver_app
+package com.inno.bestkilo.driver
 
 import io.flutter.embedding.android.FlutterActivity
 

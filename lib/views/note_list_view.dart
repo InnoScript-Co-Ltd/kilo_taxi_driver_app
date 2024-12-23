@@ -49,11 +49,11 @@ class NoteListView extends StatelessWidget {
         String content = '';
 
         return AlertDialog(
-          title: Text('Add Note'),
+          title: const Text('Add Note'),
           content: Column(
             children: [
               TextField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Title',
                 ),
                 onChanged: (value) {
@@ -61,7 +61,7 @@ class NoteListView extends StatelessWidget {
                 },
               ),
               TextField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Content',
                 ),
                 onChanged: (value) {
@@ -80,7 +80,7 @@ class NoteListView extends StatelessWidget {
                 viewModel.addNote(note);
                 Navigator.of(context).pop();
               },
-              child: Text('Add'),
+              child: const Text('Add'),
             ),
           ],
         );
@@ -96,7 +96,7 @@ class NoteListView extends StatelessWidget {
         String content = note.content;
 
         return AlertDialog(
-          title: Text('Edit Note'),
+          title: const Text('Edit Note'),
           content: Column(
             children: [
               TextField(

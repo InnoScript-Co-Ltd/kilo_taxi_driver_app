@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:kilo_driver_app/routes/routes.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
-import 'package:kilo_driver_app/views/home_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter MVVM with BLoC',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
         fontFamily: 'Poppins',
@@ -21,8 +22,26 @@ class MyApp extends StatelessWidget {
           primary: PRIMARY_COLOR,
           onPrimary: TEXT_COLOR,
         ),
+        actionIconTheme: ActionIconThemeData(
+          backButtonIconBuilder: (context) => const Icon(
+            Icons.arrow_back_ios, // Replace with your custom icon
+          ),
+        ),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: WHITE_COLOR,
+          surfaceTintColor: WHITE_COLOR,
+          elevation: 0.5, // Optional: remove shadow,
+          shadowColor: GREY_COLOR,
+          centerTitle: true, // Optional: center titles by default
+          titleTextStyle: TextStyle(
+            color: BLACK_COLOR,
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
       ),
-      home: const HomeView(),
+      onGenerateRoute: RouteClass.generateRoute,
+      initialRoute: RouteClass.splash,
     );
   }
 }
