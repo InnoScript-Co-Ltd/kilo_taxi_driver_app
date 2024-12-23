@@ -1,9 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:kilo_driver_app/routes/routes.dart';
 import 'package:kilo_driver_app/theme/resource/colors.dart';
 import 'package:kilo_driver_app/theme/resource/dimens.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:http/http.dart' as http;
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -14,6 +17,46 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   bool autoOn = true;
+  List<LatLng> routpoints = [];
+
+  @override
+  initState() {
+    initRoute();
+    super.initState();
+  }
+
+  Future<void> initRoute() async {
+    const double startLatitude = 16.8261419;
+    const double startLongitude = 96.1277288;
+    const double destinationLatitude = 16.860652;
+    const double destinationLongitude = 96.1199995;
+
+    final Uri url = Uri.parse(
+      'http://router.project-osrm.org/route/v1/driving/$startLongitude,$startLatitude;$destinationLongitude,$destinationLatitude?steps=true&annotations=true&geometries=geojson&overview=full',
+    );
+
+    try {
+      final response = await http.get(url);
+
+      if (response.statusCode == 200) {
+        final List<dynamic> coordinates =
+            jsonDecode(response.body)['routes'][0]['geometry']['coordinates'];
+
+        setState(() {
+          routpoints = coordinates
+              .map((coordinate) => LatLng(coordinate[1], coordinate[0]))
+              .toList();
+        });
+      } else {
+        throw Exception('Failed to load route: ${response.statusCode}');
+      }
+    } catch (e) {
+      // Handle error
+      print('Error fetching route: $e');
+      routpoints = []; // Ensure routpoints is reset in case of error
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,20 +165,6 @@ class _HomeViewState extends State<HomeView> {
               ];
             },
           ),
-          // IconButton(
-          //   icon:
-          //       const Icon(Icons.check), // Trailing icon (e.g., settings icon)
-          //   onPressed: () {
-          //     Navigator.pushNamed(context, RouteClass.autoOrderAccept);
-          //   },
-          // ),
-          // IconButton(
-          //   icon:
-          //       const Icon(Icons.check), // Trailing icon (e.g., settings icon)
-          //   onPressed: () {
-          //     Navigator.pushNamed(context, RouteClass.autoOrderAccept);
-          //   },
-          // ),
         ],
       ),
       body: SafeArea(
@@ -143,7 +172,7 @@ class _HomeViewState extends State<HomeView> {
           children: [
             FlutterMap(
                 options: const MapOptions(
-                  initialCenter: LatLng(16.8395368, 95.8518913),
+                  initialCenter: LatLng(16.8261419, 96.1277288),
                   initialZoom: 15,
                 ),
                 children: [
@@ -152,13 +181,28 @@ class _HomeViewState extends State<HomeView> {
                         "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                     userAgentPackageName: 'com.example.app',
                   ),
+                  PolylineLayer(
+                    simplificationTolerance: 0.2,
+                    polylines: [
+                      Polyline(
+                          points: routpoints,
+                          color: Colors.blue,
+                          strokeWidth: 5)
+                    ],
+                  ),
                   MarkerLayer(markers: [
                     Marker(
-                      point: const LatLng(16.8395368, 95.8518913),
+                      point: const LatLng(16.8261419, 96.1277288),
                       width: 40,
                       height: 40,
                       child: Image.asset('assets/images/car_marker.png'),
-                    )
+                    ),
+                    Marker(
+                      point: const LatLng(16.860652, 96.1199995),
+                      width: 40,
+                      height: 40,
+                      child: Image.asset('assets/images/marker.png'),
+                    ),
                   ]),
                 ]),
             Positioned(
@@ -190,7 +234,8 @@ class _HomeViewState extends State<HomeView> {
                     ),
                     MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, RouteClass.acceptOrderDetail);
+                        Navigator.pushNamed(
+                            context, RouteClass.acceptOrderDetail);
                       },
                       color: const Color(0xFF0909C4),
                       shape: RoundedRectangleBorder(
